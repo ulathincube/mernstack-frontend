@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Home = () => {
+  const [sampleData, setSampleData] = useState(null);
   const getSampleData = async () => {
     try {
       const response = await axios.get(
@@ -11,6 +12,7 @@ const Home = () => {
 
       const { data } = response;
       console.log(data);
+      setSampleData(data);
     } catch (error) {
       console.log(error);
     }
@@ -22,7 +24,7 @@ const Home = () => {
 
   return (
     <>
-      <SampleComponent />
+      <SampleComponent data={sampleData} />
     </>
   );
 };
