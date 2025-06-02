@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Home = () => {
-  const [sampleData, setSampleData] = useState(null);
+  const [sampleData, setSampleData] = useState('');
   const getSampleData = async () => {
     try {
       const response = await axios.get(
